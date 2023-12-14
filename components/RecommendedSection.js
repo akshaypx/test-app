@@ -4,10 +4,12 @@ import { useSelector } from "react-redux";
 
 import styles from "../constants/globalStyles";
 import ProductCard from "./ProductCard";
+import { useWindowWidth } from "../utils/useWindowWidth";
 
 const RecommendedSection = () => {
   const products = useSelector((state) => state.products.products);
   const status = useSelector((state) => state.products.status);
+  const width = useWindowWidth();
 
   return (
     <View>
@@ -23,7 +25,7 @@ const RecommendedSection = () => {
           justifyContent: "center",
           flexDirection: "row",
           flexWrap: "wrap",
-          gap: 24,
+          gap: width < 400 ? 18 : 24,
           paddingBottom: 400,
         }}
       >

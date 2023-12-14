@@ -2,18 +2,19 @@ import { View, Text, ScrollView } from "react-native";
 import React, { useLayoutEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 import styles from "../constants/globalStyles";
 import ProductCard from "../components/ProductCard";
+import { useWindowWidth } from "../utils/useWindowWidth";
 
 const FavouritesScreen = () => {
   const navigation = useNavigation();
   const favouriteProducts = useSelector(
     (state) => state.favourites.favouriteProducts
   );
+  const width = useWindowWidth();
 
-  const dispatch = useDispatch();
   useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: false,
@@ -36,7 +37,7 @@ const FavouritesScreen = () => {
             justifyContent: "start",
             flexDirection: "row",
             flexWrap: "wrap",
-            gap: 24,
+            gap: width < 400 ? 18 : 24,
             paddingBottom: 400,
             width: "100%",
           }}
