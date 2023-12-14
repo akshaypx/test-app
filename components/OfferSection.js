@@ -1,7 +1,7 @@
 import { View, Text, Image } from "react-native";
 import React from "react";
 import { ScrollView } from "react-native";
-import { PhotoIcon } from "react-native-heroicons/outline";
+
 import styles from "../constants/globalStyles";
 
 const OfferSection = () => {
@@ -16,7 +16,6 @@ const OfferSection = () => {
         showsHorizontalScrollIndicator={false}
       >
         <View className="w-[269px] h-[123px] bg-secondary flex flex-row justify-center items-center rounded-2xl mr-7">
-          {/* <PhotoIcon size={80} color="#F8F9FB" opacity={0.6} /> */}
           <View className="overflow-hidden rounded-xl mr-8">
             <Image
               source={require("../assets/ice-cream.jpg")}

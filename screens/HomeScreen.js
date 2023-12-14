@@ -1,18 +1,18 @@
 import { View, Text, Image, ScrollView, TouchableOpacity } from "react-native";
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-
 import { useDispatch, useSelector } from "react-redux";
 import {
   ShoppingBagIcon,
   MagnifyingGlassIcon,
   ChevronDownIcon,
 } from "react-native-heroicons/outline";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
 import OfferSection from "../components/OfferSection";
 import RecommendedSection from "../components/RecommendedSection";
 import { fetchProducts } from "../store/productSlice/ProductSlice";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import styles from "../constants/globalStyles";
 
 const Tab = createBottomTabNavigator();
@@ -33,7 +33,7 @@ const HomeScreen = () => {
   }, []);
 
   return (
-    <SafeAreaView className="h-full bg-white">
+    <SafeAreaView className="h-full bg-[#fff]">
       <ScrollView vertical>
         {/* Header */}
         <View className="w-full h-[240px] bg-primary flex items-center">

@@ -9,15 +9,16 @@ import {
 import { StyleSheet, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native";
 import * as Animatable from "react-native-animatable";
-import HomeScreen from "./HomeScreen";
+import { useNavigation } from "@react-navigation/native";
+
 import CategoriesScreen from "./CategoriesScreen";
 import FavouritesScreen from "./FavouritesScreen";
 import MoreScreen from "./MoreScreen";
-import { useNavigation } from "@react-navigation/native";
+import HomeScreen from "./HomeScreen";
 
 const Tab = createBottomTabNavigator();
 
-export default function Tabs() {
+export default function MainScreen() {
   const navigation = useNavigation();
   useLayoutEffect(() => {
     navigation.setOptions({

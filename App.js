@@ -1,13 +1,8 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeScreen from "./screens/HomeScreen";
 import { Provider } from "react-redux";
-import store from "./store/store";
-import DetailsScreen from "./screens/DetailsScreen";
-import ShoppingCartScreen from "./screens/ShoppingCartScreen";
-import Tabs from "./screens/Tabs";
 import { useFonts } from "expo-font";
 import {
   Manrope_700Bold,
@@ -15,6 +10,11 @@ import {
   Manrope_500Medium,
   Manrope_400Regular,
 } from "@expo-google-fonts/manrope";
+
+import store from "./store/store";
+import DetailsScreen from "./screens/DetailsScreen";
+import ShoppingCartScreen from "./screens/ShoppingCartScreen";
+import MainScreen from "./screens/MainScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -34,8 +34,7 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator>
           {/* Screens */}
-          <Stack.Screen name="Tabs" component={Tabs} />
-          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Main" component={MainScreen} />
           <Stack.Screen name="Details" component={DetailsScreen} />
           <Stack.Screen name="Cart" component={ShoppingCartScreen} />
         </Stack.Navigator>

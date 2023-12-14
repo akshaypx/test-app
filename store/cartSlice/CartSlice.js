@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   cartItems: [],
@@ -18,10 +18,8 @@ const cartSlice = createSlice({
       );
 
       if (existingItem) {
-        // If the item is already in the cart, update its count
         existingItem.count += 1;
       } else {
-        // If the item is not in the cart, add it
         state.cartItems.push({ ...action.payload, count: 1 });
       }
 
@@ -64,7 +62,6 @@ const cartSlice = createSlice({
           state.totalItems -= 1;
           state.totalPrice -= itemToDecrease.price;
         } else {
-          // If count is less than one, remove the item from cartItems
           state.totalItems -= 1;
           state.totalPrice -= itemToDecrease.price;
           state.cartItems = state.cartItems.filter(

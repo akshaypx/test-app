@@ -1,13 +1,14 @@
 import { View, Text, Pressable } from "react-native";
 import React, { useLayoutEffect } from "react";
+import { useSelector } from "react-redux";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import {
   ChevronLeftIcon,
   ShoppingCartIcon,
 } from "react-native-heroicons/outline";
+
 import CartItem from "../components/CartItem";
-import { useSelector } from "react-redux";
 import styles from "../constants/globalStyles";
 
 const ShoppingCartScreen = () => {
@@ -22,7 +23,7 @@ const ShoppingCartScreen = () => {
   }, []);
 
   return (
-    <SafeAreaView className="h-full bg-white">
+    <SafeAreaView className="h-full bg-[#fff]">
       <View className="h-full items-center justify-between">
         <View className="w-full h-[252px] flex items-center">
           <View className="w-full py-7 px-5 flex flex-row justify-start items-center">

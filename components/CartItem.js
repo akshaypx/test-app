@@ -2,6 +2,7 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 import React from "react";
 import { MinusIcon, PlusIcon } from "react-native-heroicons/outline";
 import { useDispatch } from "react-redux";
+
 import {
   decreaseItemCount,
   increaseItemCount,

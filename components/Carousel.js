@@ -1,22 +1,14 @@
-import {
-  View,
-  Text,
-  FlatList,
-  Image,
-  Dimensions,
-  TouchableOpacity,
-} from "react-native";
+import { View, FlatList, Image, TouchableOpacity } from "react-native";
 import React, { useEffect, useRef, useState } from "react";
 import * as OutlineHeartIcons from "react-native-heroicons/outline";
 import * as SolidHeartIcons from "react-native-heroicons/solid";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  addToFavourites,
-  toggleFavorite,
-} from "../store/favouriteSlice/FavouriteSlice";
+
+import { toggleFavorite } from "../store/favouriteSlice/FavouriteSlice";
+import { useWindowWidth } from "../utils/useWindowWidth";
 
 const Carousel2 = ({ data }) => {
-  const width = Dimensions.get("window").width;
+  const width = useWindowWidth();
   const [activeIndex, setActiveIndex] = useState(0);
   const flatlistRef = useRef();
   const favouriteIds = useSelector((state) => state.favourites.favouriteIds);

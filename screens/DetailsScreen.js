@@ -8,6 +8,7 @@ import {
   ChevronLeftIcon,
 } from "react-native-heroicons/outline";
 import { StarIcon } from "react-native-heroicons/solid";
+
 import { addItemToCart } from "../store/cartSlice/CartSlice";
 import Carousel from "../components/Carousel";
 import styles from "../constants/globalStyles";
@@ -31,7 +32,7 @@ const DetailsScreen = () => {
   }
 
   return (
-    <SafeAreaView className="h-full bg-white">
+    <SafeAreaView className="h-full bg-[#fff]">
       <View className="w-full h-[252px] flex items-center justify-start">
         <View className="w-full pt-7 pb-2 px-5 flex flex-row justify-between items-center">
           <Pressable onPress={() => navigation.goBack()}>
@@ -108,12 +109,12 @@ const DetailsScreen = () => {
           </View>
         </View>
 
-        <View className="flex flex-row w-full justify-around p-4">
+        <View className="flex flex-row w-full justify-between p-4">
           <TouchableOpacity
             onPress={() => {
               dispatch(addItemToCart(product));
             }}
-            className="border-solid border-2 border-primary h-[56px] w-[169px] justify-center items-center rounded-[20px]"
+            className="border-solid border-2 border-primary h-[56px] flex-1 justify-center items-center rounded-[20px] mr-4"
           >
             <Text style={styles.button_14} className="text-primary">
               Add To Cart
@@ -124,7 +125,7 @@ const DetailsScreen = () => {
               dispatch(addItemToCart(product));
               navigation.navigate("Cart");
             }}
-            className="bg-primary h-[56px] w-[169px] justify-center items-center rounded-[20px]"
+            className="bg-primary h-[56px] flex-1 justify-center items-center rounded-[20px]"
           >
             <Text style={styles.button_14} className="text-[#fff]">
               Buy Now
