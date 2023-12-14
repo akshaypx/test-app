@@ -18,14 +18,6 @@ import {
 
 const Stack = createNativeStackNavigator();
 
-// const getFonts = () =>
-//   Font.loadAsync({
-//     "manrope-bold": require("assets/fonts/Manrope-Bold.ttf"),
-//     "manrope-semibold": require("assets/fonts/Manrope-Semibold.ttf"),
-//     "manrope-medium": require("assets/fonts/Manrope-Medium.ttf"),
-//     "manrope-regular": require("assets/fonts/Manrope-Regular.ttf"),
-//   });
-
 export default function App() {
   const [fontsLoaded] = useFonts({
     Manrope_700Bold,
@@ -38,6 +30,7 @@ export default function App() {
   }
   return (
     <Provider store={store}>
+      <StatusBar style="dark" />
       <NavigationContainer>
         <Stack.Navigator>
           {/* Screens */}
@@ -49,34 +42,4 @@ export default function App() {
       </NavigationContainer>
     </Provider>
   );
-  // const [fontsLoaded, setFontsLoaded] = useState(false);
-
-  // if (fontsLoaded) {
-  //   return (
-  //     <Provider store={store}>
-  //       <NavigationContainer>
-  //         <Stack.Navigator>
-  //           {/* Screens */}
-  //           <Stack.Screen name="Tabs" component={Tabs} />
-  //           <Stack.Screen name="Home" component={HomeScreen} />
-  //           <Stack.Screen name="Details" component={DetailsScreen} />
-  //           <Stack.Screen name="Cart" component={ShoppingCartScreen} />
-  //         </Stack.Navigator>
-  //       </NavigationContainer>
-  //     </Provider>
-  //   );
-  // } else {
-  //   return (
-  //     <AppLoading startAsync={getFonts} onFinish={() => setFontsLoaded(true)} />
-  //   );
-  // }
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: "#fff",
-//     alignItems: "center",
-//     justifyContent: "center",
-//   },
-// });

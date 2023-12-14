@@ -24,18 +24,19 @@ const FavouritesScreen = () => {
     navigation.setOptions({
       headerShown: false,
     });
-    // fetchProduct();
   }, []);
   return (
     <SafeAreaView>
-      <View>
-        <Text style={styles.h1_regular_30px} className="py-2 px-6">
-          Favourites
-        </Text>
+      <View className="flex justify-center items-center w-full">
+        <View className="w-full">
+          <Text style={styles.h1_regular_30px} className="py-2 px-6">
+            Favourites
+          </Text>
+        </View>
         <ScrollView
           vertical
           contentContainerStyle={{
-            paddingHorizontal: 24,
+            paddingHorizontal: 10,
             paddingTop: 15,
             display: "flex",
             justifyContent: "start",
@@ -43,6 +44,7 @@ const FavouritesScreen = () => {
             flexWrap: "wrap",
             gap: 35,
             paddingBottom: 400,
+            width: "100%",
           }}
         >
           {favouriteProducts.length > 0 ? (

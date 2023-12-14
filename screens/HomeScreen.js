@@ -19,8 +19,6 @@ const Tab = createBottomTabNavigator();
 
 const HomeScreen = () => {
   const navigation = useNavigation();
-  const products = useSelector((state) => state.products.products);
-  const status = useSelector((state) => state.products.status);
   const totalItems = useSelector((state) => state.cart.totalItems);
   const dispatch = useDispatch();
 
@@ -97,7 +95,7 @@ const HomeScreen = () => {
             </View>
             <View>
               <Text
-                style={styles.label_medium}
+                style={styles.body2_regular_14px}
                 className="text-black1 uppercase pb-2 opacity-50"
               >
                 within

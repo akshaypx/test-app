@@ -5,9 +5,6 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import {
   ShoppingBagIcon,
-  MagnifyingGlassIcon,
-  ChevronDownIcon,
-  PlusIcon,
   ChevronLeftIcon,
 } from "react-native-heroicons/outline";
 import { StarIcon } from "react-native-heroicons/solid";
@@ -50,7 +47,7 @@ const DetailsScreen = () => {
             >
               <View className="relative">
                 <ShoppingBagIcon color="#000" />
-                <View className="absolute top-[-5] right-[-5] bg-[#F9B023] h-5 w-5 justify-center items-center rounded-full">
+                <View className="absolute top-[-5] right-[-5] bg-secondary h-5 w-5 justify-center items-center rounded-full">
                   <Text className="text-black1">{totalItems}</Text>
                 </View>
               </View>
@@ -74,7 +71,6 @@ const DetailsScreen = () => {
           </Text>
         </View>
 
-        {/* <Carousel images={product.images} /> */}
         <Carousel data={product} />
 
         <View className="w-full px-5 flex flex-row justify-start">

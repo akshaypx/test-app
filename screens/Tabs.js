@@ -82,7 +82,6 @@ export default function Tabs() {
         ) : (
           item.activeIcon("#3d3c3d", 25)
         )}
-        {/* {item.activeIcon("#3d3c3d", 25)} */}
         {!focused && <Text style={styles.TabBarLabel}>{item.label}</Text>}
       </TouchableOpacity>
     );

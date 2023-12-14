@@ -104,7 +104,7 @@ const Carousel2 = ({ data }) => {
       <View className="flex flex-row justify-start items-center ml-4 absolute bottom-16">
         {renderDotIndicators()}
       </View>
-      <View className="absolute right-10 top-5 h-[58px] w-[58px] bg-white rounded-[20px] flex justify-center items-center">
+      <View className="absolute right-10 top-5 h-[58px] w-[58px] bg-black1 rounded-[20px] flex justify-center items-center">
         <TouchableOpacity
           onPress={() => {
             dispatch(toggleFavorite(data));
